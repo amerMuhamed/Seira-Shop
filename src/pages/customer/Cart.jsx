@@ -11,7 +11,8 @@ const Cart = () => {
   if (!cartData) {
     return <div>No products found</div>;
   }
-  const products = cartData ? cartData[0]?.products : [];
+  const products = cartData ;
+
   return (
     <div
       className=" w-full flex flex-wrap flex-col justify-center content-center items-center mx-auto p-6 "

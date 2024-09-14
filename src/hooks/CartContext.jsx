@@ -15,7 +15,9 @@ export const CartProvider = ({ children }) => {
       if (authenticationData) {
         try {
           const response = await fetchCart();
-          setCartData(response);
+          const products = response ? response[0]?.products : [];
+
+          setCartData(products);
         } catch (error) {
           setError(error);
         } finally {
@@ -28,6 +30,14 @@ export const CartProvider = ({ children }) => {
 
     getCart();
   }, [authenticationData]);
+const addToCart =  (product) => {
+  if(cartData.find(theProduct => theProduct.productId === product.productId)){
+    product.quantity =product.quantity +1 ;
+  }else{
+    product.quantity = 1;
+  setCartData([...cartData, product]);
+}
+}
 
   const refreshCart = async () => {
     if (authenticationData) {
@@ -45,6 +55,7 @@ export const CartProvider = ({ children }) => {
 
   const value = {
     cartData,
+    addToCart,
     loading,
     error,
     refreshCart,

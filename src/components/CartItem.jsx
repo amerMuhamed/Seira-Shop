@@ -48,7 +48,7 @@ const handleIncrease = () => {
 
 
   return (
-    <div className="flex items-center gap-5 p-4 bg-neutral-300 w-3/4 border border-gray-200 rounded-lg shadow-md mb-4">
+    <div style={{border: "1px solid #dcf2f2"}} className=" flex items-center gap-5 p-4 bg-neutral-300 w-3/4 border border-gray-200 rounded-lg shadow-md mb-4">
       <img
         src={cartData.image}
         alt={cartData.title}

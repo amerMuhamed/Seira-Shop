@@ -11,7 +11,7 @@ const NavBar = () => {
     return null;
   }
 
-  const products = cartData ? cartData[0]?.products : [];
+  const products = cartData ;
   return (
     <nav className="bg-white p-4">
       <div className="container mx-auto flex justify-between items-center">
@@ -21,14 +21,14 @@ const NavBar = () => {
         <div className="flex space-x-5 items-center">
           <Link
             to="/products"
-            className="text-gray-800 hover:text-mainColor active:text-mainColor font-semibold"
+            className="hidden md:block text-gray-800 hover:text-mainColor active:text-mainColor font-semibold"
           >
             Products
           </Link>
           {authenticationData && products.length > 0 && (
             <Link
               to="/cart"
-              className="hidden md:block text-gray-800 font-semibold hover:text-mainColor active:text-mainColor"
+              className="text-gray-800 font-semibold hover:text-mainColor active:text-mainColor"
             >
               Cart{" "}
               <span className="bg-red-500 text-white rounded-full px-2 py-1 mx-1 text-xs">
