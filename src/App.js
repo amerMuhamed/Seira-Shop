@@ -7,6 +7,7 @@ import {AuthContext}  from "./hooks/UserContext";
 import Cart from "./pages/customer/Cart";
 import ProductForm from "./pages/admin/AddProduct";
 import Footer from "./components/Footer";
+import "./index.css"
 function App() {
   const {authenticationData} = useContext(AuthContext);
   return (

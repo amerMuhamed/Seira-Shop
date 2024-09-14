@@ -18,7 +18,7 @@ const NavBar = () => {
         <Link to="/" className="text-gray-900 text-2xl font-bold">
         Siera-Shop
         </Link>
-        <div className="hidden md:flex space-x-5 items-center">
+        <div className="flex space-x-5 items-center">
           <Link
             to="/products"
             className="text-gray-800 hover:text-mainColor active:text-mainColor font-semibold"
@@ -28,7 +28,7 @@ const NavBar = () => {
           {authenticationData && products.length > 0 && (
             <Link
               to="/cart"
-              className="text-gray-800 font-semibold hover:text-mainColor active:text-mainColor"
+              className="hidden md:block text-gray-800 font-semibold hover:text-mainColor active:text-mainColor"
             >
               Cart{" "}
               <span className="bg-red-500 text-white rounded-full px-2 py-1 mx-1 text-xs">
