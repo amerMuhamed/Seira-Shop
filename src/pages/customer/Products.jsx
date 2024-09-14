@@ -49,6 +49,7 @@ const Products = () => {
   const filteredProducts = products.filter((character) =>
     character.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
+  
   return (
     <div className="min-h-screen p-4" style={{ backgroundColor: "#eee" }}>
       <div className="searchBar h-[45px] " style={{display:"flex",justifyContent:"center" }}>
@@ -92,6 +93,7 @@ const Products = () => {
           <ProductCard key={product.id} data={product} />
         ))}
       </section>
+      
     </div>
   );
 };

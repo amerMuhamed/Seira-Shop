@@ -38,7 +38,13 @@ const addToCart =  (product) => {
   setCartData([...cartData, product]);
 }
 }
-
+const removeFromCart = (productId) => {
+  const updatedCart = cartData.filter((product) => product.productId !== productId);
+  setCartData(updatedCart);
+};
+const clearCart = () => {
+  setCartData([]); // Empty the cart
+};
   const refreshCart = async () => {
     if (authenticationData) {
       setLoading(true);
@@ -56,6 +62,8 @@ const addToCart =  (product) => {
   const value = {
     cartData,
     addToCart,
+    removeFromCart,
+    clearCart,
     loading,
     error,
     refreshCart,

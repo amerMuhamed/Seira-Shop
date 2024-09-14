@@ -1,11 +1,13 @@
-import React,{useState, useEffect} from 'react'
+import React,{useState,useContext ,useEffect} from 'react'
 import { fetchProductById } from '../api/shopServer';
 import AppLoader from './AppLoader';
+import { CartContext } from '../hooks/CartContext';
 const CartItem = ({data}) => {
     const[loading, setLoading] = useState(true);
     const[error, setError] = useState(null);
     const[cartData, setCartData] = useState(null);
     const[quantity, setQuantity] = useState(data.quantity);
+    const { removeFromCart} = useContext(CartContext);
     useEffect(() => {
         const getCart = async () => {
             try {
@@ -37,6 +39,7 @@ const CartItem = ({data}) => {
                 </div>
             )
         }
+
 const totalPrice = cartData.price * quantity
 const handleDecrease = () => {
   setQuantity((prevQuantity) => (prevQuantity === 1 ? 1 : prevQuantity-1));
@@ -46,6 +49,9 @@ const handleIncrease = () => {
   setQuantity((prevQuantity) => prevQuantity + 1);
 }
 
+const handleRemove = () => {
+  removeFromCart(data.productId);
+}
 
   return (
     <div style={{border: "1px solid #dcf2f2"}} className=" flex items-center gap-5 p-4 bg-neutral-300 w-3/4 border border-gray-200 rounded-lg shadow-md mb-4">
@@ -71,11 +77,15 @@ const handleIncrease = () => {
             +
           </button>
         </div>
-        <p className="text-gray-700 text-lg font-semibold">Price: <span className="text-green-900">${totalPrice.toFixed(2)}</span></p>
-        
-        <p className="mt-2 text-lg font-semibold">
+        <p className="mt-4 text-gray-700 text-lg font-semibold">Price: <span className="text-green-900">${totalPrice.toFixed(2)}</span></p>
+        <div className='flex justify-between items-center'> 
+        <p className=" text-lg font-semibold">
           Total Price: <span className="text-green-900">${totalPrice.toFixed(2)}</span>
         </p>
+        <button onClick={handleRemove} className="w-1/5 bg-cyan-600 text-white py-2 rounded-lg shadow-md hover:bg-purple-600 transition-colors">
+            Remove Item
+          </button>
+          </div>
       </div>
     </div>
   )

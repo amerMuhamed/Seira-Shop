@@ -4,7 +4,7 @@ import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-6">
+    <footer className="bg-gray-800 text-white py-6  w-full">
       <div className="container mx-auto flex flex-col items-center space-y-4">
         <div className="flex justify-center  gap-3 w-full  flex-wrap sm:flex-nowrap max-w-md">
           <div className="flex items-center space-x-2">
