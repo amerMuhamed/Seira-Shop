@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useContext } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "./pages/shared/Login";
+import NavBar from "./components/NavBar";
+import Products from "./pages/customer/Products";
+import {AuthContext}  from "./hooks/UserContext";
+import Cart from "./pages/customer/Cart";
+import ProductForm from "./pages/admin/AddProduct";
+import Footer from "./components/Footer";
 function App() {
+  const {authenticationData} = useContext(AuthContext);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <NavBar />
+      <Routes>
+      <Route
+          path="/"
+          element={authenticationData ? <Products /> : <Login />}
+        />
+        <Route path="/login" element={<Login />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/add-product" element={<ProductForm />} />
+        <Route path="/cart" element={<Cart />} />
+        
+      </Routes>
+      <Footer />
+    </Router>
   );
 }
 
