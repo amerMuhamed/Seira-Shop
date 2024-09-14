@@ -6,6 +6,8 @@ import cover from "./images/cover.png";
 import reviews from "./images/reviews.png";
 import Group1 from "./images/Group1.png";
 import AppLoader from "../../components/AppLoader";
+
+
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -42,6 +44,7 @@ const Products = () => {
 
   return (
     <div className="min-h-screen p-8" style={{ backgroundColor: "#eee" }}>
+    
       <header className="flex justify-around  bg-background pt-5 mt-2 mb-5 rounded-3xl h-[380px]">
         <div className="h-[370px] hidden lg:block md:block">
           <img src={cover} alt="cover" className="w-auto h-[350px] " />
