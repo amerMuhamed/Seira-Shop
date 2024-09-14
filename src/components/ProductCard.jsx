@@ -11,6 +11,8 @@ const ProductCard = ({ data }) => {
       : text;
   };
 
+  
+
   return (
     <div className=" bg-white border border-gray-200 rounded-lg shadow-md  overflow-hidden transform transition-transform hover:scale-105 duration-300">
       <img src={image} alt={title} className="w-full h-60 p-5" />

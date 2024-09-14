@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="bg-gray-800 text-white py-6">
       <div className="container mx-auto flex flex-col items-center space-y-4">
-        <div className="flex justify-center  gap-3 w-full max-w-md">
+        <div className="flex justify-center  gap-3 w-full  flex-wrap sm:flex-nowrap max-w-md">
           <div className="flex items-center space-x-2">
             <FontAwesomeIcon icon={faEnvelope} className="text-xl" />
             <a
