@@ -78,11 +78,11 @@ const handleRemove = () => {
           </button>
         </div>
         <p className="mt-4 text-gray-700 text-lg font-semibold">Price: <span className="text-green-900">${totalPrice.toFixed(2)}</span></p>
-        <div className='flex justify-between items-center'> 
+        <div className='flex justify-between items-center flex-col sm:flex-row'> 
         <p className=" text-lg font-semibold">
           Total Price: <span className="text-green-900">${totalPrice.toFixed(2)}</span>
         </p>
-        <button onClick={handleRemove} className="w-1/5 bg-cyan-600 text-white py-2 rounded-lg shadow-md hover:bg-purple-600 transition-colors">
+        <button onClick={handleRemove} className="w-fit sm:w-1/5 bg-cyan-600 text-white py-2 rounded-lg shadow-md hover:bg-purple-600 transition-colors">
             Remove Item
           </button>
           </div>
