@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../hooks/UserContext";
 import { CartContext } from "../hooks/CartContext";
-
+import seira from "../pages/customer/images/seira.png";
 const NavBar = () => {
   const { authenticationData, logout } = useContext(AuthContext);
   const { cartData, loading } = useContext(CartContext);
@@ -11,12 +11,14 @@ const NavBar = () => {
     return null;
   }
 
-  const products = cartData ;
+  const products = cartData;
   return (
     <nav className="bg-white p-4">
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="text-gray-900 text-2xl font-bold">
-        Siera-Shop
+          <div className="h-[50px] ">
+            <img src={seira} alt="cover" className="w-auto h-[50px] " />
+          </div>
         </Link>
         <div className="flex space-x-5 items-center">
           <Link
